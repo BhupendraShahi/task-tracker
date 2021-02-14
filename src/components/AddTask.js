@@ -1,5 +1,4 @@
 import { useState } from 'react'
-import { FaRegObjectUngroup } from 'react-icons/fa'
 
 const AddTask = ({ onAdd }) => {
     const [text, setText] = useState('')
@@ -7,7 +6,7 @@ const AddTask = ({ onAdd }) => {
     const [reminder, setReminder] = useState(false)
 
     const onSubmit =(e) => {
-        e.prevent.Default()
+        e.preventDefault()
 
         if(!text) {
             alert('Please add a task')
@@ -26,9 +25,11 @@ const AddTask = ({ onAdd }) => {
         <form className='add-form' onSubmit={onSubmit}>
             <div className='form-control'>
                 <label>Task</label>
-                <input type='text' placeholder='Add Task'
-                value={text} onChange={
-                    (e) => setText(e.target.value)
+                <input 
+                    type='text' 
+                    placeholder='Add Task'
+                    value={text} 
+                    onChange={(e) => setText(e.target.value)
                 } />
             </div>
             <div className='form-control'>
@@ -38,15 +39,14 @@ const AddTask = ({ onAdd }) => {
                     (e) => setDay(e.target.value)
                 } />
             </div>
-            <div className='form-control'>
+            <div className='form-control form-control-check'>
                 <label>Set Reminder</label>
                 <input 
                     type='checkbox'
                     checked = {reminder} 
                     value={reminder} 
-                    onChange={(e) => 
-                        setReminder(e.currentTarget.checked)
-                } />
+                    onChange={(e) => setReminder(e.currentTarget.checked)} 
+                />
             </div>
 
             <input type='submit' value='Save Task' className='btn btn-block' />
