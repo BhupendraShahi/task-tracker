@@ -1,4 +1,4 @@
-TASK TRACKER (using REACT.js and fake json server)
+TASK TRACKER (using REACT.js and fake JSON server)
 
 This is a Task manager made using react in which you can do the following operations:
 1. Add a task.
